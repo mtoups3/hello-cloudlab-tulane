@@ -190,6 +190,65 @@ Keep an eye on your email inbox (including the Spam folder!) for:
 
 Now you have a CloudLab account - you're ready to log in and use it to get experiment resources!
 
+## Reserve and log in to resources on CloudLab
+
+Whenever you run an experiment on CloudLab, you will
+
+1. Open the *profile* - a description of the experiment resources (hosts and network links) that your experiment will use.
+2. Submit a request to "instantiate" that configuration for use in your experiment.
+3. Wait until the resources in your experiment are ready to log in.
+4. Log in to the resources and run your experiment.
+
+Also, when you finish an experiment and have saved all the data somewhere safe, you will _delete_ the resources in your experiment to free them for use by other experimenters.
+
+### Exercise - Open a profile
+
+
+### Exercise - Instantiate a profile
+
+### Exercise - Wait for resources to be ready 
+
+Once you have successfully instantiated a profile, it will still take some time before your resources are ready for you to log in. To see resource status...
+
+This may take some time. 
+
+> **What if it fails?** If the CloudLab site is unable to bring up the resources you requested (even if the request "finishes"), it may say "Resources at X have failed" on the slice page, and you may get an email telling you that your VMs failed to boot. If this happens, delete the resources (use the "Delete" button at the bottom of the canvas). Then, try to reserve your resources again with a different aggregate.
+
+### Exercise - Log in to resources
+
+Once all of your resources are ready to log in, you will need to find out the details of each host (its hostname and the port number that you will use for SSH access). To get this information, click on "Details" at the bottom of the canvas. This will take you to a page that lists login details for each host in your experiment.
+
+To log in to a host on GENI, you will need to specify your GENI username, the hostname of the host, the port number, and the location of your private key. Open a terminal, and run
+
+```
+ssh USERNAME@HOSTNAME -p PORT -i /PATH/TO/id_rsa
+```
+
+where `USERNAME` is your GENI username, `HOSTNAME` is the hostname of the VM you are logging in to, `PORT` is the port number specified in the portal for that VM, and `/PATH/TO/id_rsa` is the full path to the private half of your key pair. (The default location is `~/.ssh/id_rsa` if you generated your key with `ssh-keygen` and didn't specify a different location.)
+
+For example, if the GENI Portal shows the following login details for me for the "romeo" host in my experiment:
+
+![](1-jacks-login-details.png)
+
+and my key was located in the default location, `~/.ssh/id_rsa`, I would run
+
+```
+ssh ffund01@pc3.instageni.maxgigapop.net -p 25107 -i ~/.ssh/id_rsa
+```
+
+in a terminal window to log in.
+
+The first time you log in to each new host, your computer will display a warning similar to the following:
+
+```
+The authenticity of host '[pc3.instageni.maxgigapop.net]:25107 ([206.196.180.202]:25107)' can't be established.
+RSA key fingerprint is SHA256:FUNco2udT/ur2rNb2NnZnUc8s2v6xvNdOFhFFxcWGYA.
+Are you sure you want to continue connecting (yes/no)?
+```
+
+and you will have to type the word `yes` and hit Enter to continue. If you have specified your key path and other details correctly, it won't ask you for a password when you log in to the node. (It may ask for the passphrase for your private key if you've set one.)
+
+
 
 ## Appendix - view, edit, or add keys on CloudLab
 
