@@ -36,24 +36,24 @@ lan_j.best_effort = True
 # Set up first host - romeo
 node_romeo = request.XenVM("romeo")
 iface_romeo = node_romeo.addInterface("eth1")
-iface_romeo.addAddress(rspec.IPv4Address("10.0.0.2", "255.255.255.0"))
+iface_romeo.addAddress(pg.IPv4Address("10.0.0.2", "255.255.255.0"))
 lan_r.addInterface(iface_romeo)
 node_romeo.startVNC()
 
 # Set up first host - juliet
 node_juliet = request.XenVM("juliet")
 iface_juliet = node_juliet.addInterface("eth1")
-iface_juliet.addAddress(rspec.IPv4Address("10.0.1.2", "255.255.255.0"))
+iface_juliet.addAddress(pg.IPv4Address("10.0.1.2", "255.255.255.0"))
 lan_j.addInterface(iface_juliet)
 node_juliet.startVNC()
 
 # Set up router
 node_router = request.XenVM("router")
 iface_router_r = node_router.addInterface("eth1")
-iface_router_r.addAddress(rspec.IPv4Address("10.0.0.1", "255.255.255.0"))
+iface_router_r.addAddress(pg.IPv4Address("10.0.0.1", "255.255.255.0"))
 lan_r.addInterface(iface_router_r)
 iface_router_j = node_router.addInterface("eth1")
-iface_router_j.addAddress(rspec.IPv4Address("10.0.1.1", "255.255.255.0"))
+iface_router_j.addAddress(pg.IPv4Address("10.0.1.1", "255.255.255.0"))
 lan_j.addInterface(iface_router_j)
 node_router.startVNC()
 
