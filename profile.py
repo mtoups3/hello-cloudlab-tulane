@@ -18,7 +18,7 @@ pc = portal.Context()
 request = pc.makeRequestRSpec()
 
 # Set up first host - romeo
-node_romeo = request.XenVM("romeo")
+node_romeo = request.RawPC("romeo")
 node_romeo.startVNC()
 
 # Print the RSpec to the enclosing page.

@@ -107,7 +107,7 @@ This property can be exploited for authenticating login to a remote machine. Fir
 1. You use a special argument with your SSH command to let your SSH application know that you are going to use a key, and the location of your private key. If the private key is protected by a passphrase, you may be prompted to enter the passphrase (this is not a password for the remote machine, though.)
 2. The machine you are logging in to will ask your SSH client to "prove" that it owns the (secret) private key that matches an authorized public key. To do this, the machine will send a random message to you.
 3. Your SSH client will encrypt the random message with the private key and send it back to the remote machine.
-5. The remote machine will decrypt the message with your public key. If the decrypted message matches the message it sent you, it has "proof" that you are in possession of the private key for that key pair, and will grant you access (without using an account password on the remote machine.)
+4. The remote machine will decrypt the message with your public key. If the decrypted message matches the message it sent you, it has "proof" that you are in possession of the private key for that key pair, and will grant you access (without using an account password on the remote machine.)
 
 (Of course, this relies on you keeping your private key a secret.)
 
@@ -200,57 +200,155 @@ Whenever you run an experiment on CloudLab, you will
 
 Also, when you finish an experiment and have saved all the data somewhere safe, you will _delete_ the resources in your experiment to free them for use by other experimenters.
 
-### Exercise - Open a profile
+### Exercise - Open and instantiate a profile
 
 For this experiment, we will use the CloudLab profile available at the following link: https://www.cloudlab.us/p/cl-education/hello-cloudlab
 
 You'll see a brief description of the profile:
 
 ![Description of profile.](images/profile-1.png)
-### Exercise - Instantiate a profile
+
+Click "Next". On the following page, you'll see a diagram of your experiment topology (on the right - in this case, a single host named "romeo"),
+and on the left you'll be asked to select the "Cluster" on which you want your experiment to run:
+
+![Cluster selection.](images/profile-3.png)
+
+Unless otherwise specified, these experiments can run on any cluster. However, since CloudLab is a shared resource, on some occasionas the cluster you select might not have enough available resources to support your experiment. The status indicator next to each cluster tells you roughly how heavily utilized it is at the moment - green indicates that there are not many users, orange means heavy load, and red means that it is almost fully utilized. You are more likely to be successful if you choose a cluster with a green indicator.
+
+After you select a cluster, you can leave the "Name" field blank, or give your experiment a name - it's your choice. Then, click "Next".
+
+![Set experiment duration.](images/profile-4.png)
+
+On the last page, you'll be asked to set the duration of your experiment. At the end of this duration, your resources will be deleted automatically - so make sure to give yourself enough time to finish.
+
+You can leave the start date/time on this page blank if you are ready to work on the experiment right now. 
+
+When you have made all your choices, click "Finish" to ask CloudLab to reserve resources according to your configuration.
 
 ### Exercise - Wait for resources to be ready 
 
-Once you have successfully instantiated a profile, it will still take some time before your resources are ready for you to log in. To see resource status...
+Once you have successfully instantiated a profile, it will still take some time before your resources are ready for you to log in.
 
-This may take some time. 
+As your resources come online, you'll see their progress on the CloudLab experiment page:
 
-> **What if it fails?** If the CloudLab site is unable to bring up the resources you requested (even if the request "finishes"), it may say "Resources at X have failed" on the slice page, and you may get an email telling you that your VMs failed to boot. If this happens, delete the resources (use the "Delete" button at the bottom of the canvas). Then, try to reserve your resources again with a different aggregate.
+![Instantiation progress.](images/instantiate-0.png)
+
+As time passes, you will see a diagram of your experiment, but initially the hosts in the experiment will be colored yellow - this indicates that they're not ready to use yet. There's also a small "-" icon in the top right corner of the host - this indicates that it is not yet fully configured.
+
+![Instantiation progress.](images/instantiate-1.png)
+
+It can take a while for hosts to boot up and load their configurations - you may want to step away or work on something else for 15-20 minutes and then check back.
+
+At some point, the host will turn green, but it may have a "." icon in the top right - this indicates that it is still being configured.
+
+![Instantiation progress.](images/instantiate-2.png)
+
+
+Eventually, the host will be "green" with a "✓" icon in the top right corner. This shows that it is ready to use, and you can go on to the next step.
+
+![Instantiation complete.](images/instantiate-3.png)
+
+> **What if it fails?** If the CloudLab site is unable to bring up the resources you requested, the hosts will turn red instead of green. If this happens, delete the resources (use the red "Terminate" button). Then, try to reserve your resources again - you may want to try a different cluster, in case the problem was with the specific cluster that you used.
 
 ### Exercise - Log in to resources
 
-Once all of your resources are ready to log in, you will need to find out the details of each host (its hostname and the port number that you will use for SSH access). To get this information, click on "Details" at the bottom of the canvas. This will take you to a page that lists login details for each host in your experiment.
+Once the host in your experiment is "green" and has a "✓" icon in the top right corner, it is ready for you to log in! In this exercise, you'll practice accessing the host three ways:
 
-To log in to a host on GENI, you will need to specify your GENI username, the hostname of the host, the port number, and the location of your private key. Open a terminal, and run
+* Using the terminal in the CloudLab web portal
+* Using your own terminal application
+* Using VNC (for a graphical interface)
 
-```
-ssh USERNAME@HOSTNAME -p PORT -i /PATH/TO/id_rsa
-```
+#### Using the terminal in the CloudLab web portal
 
-where `USERNAME` is your GENI username, `HOSTNAME` is the hostname of the VM you are logging in to, `PORT` is the port number specified in the portal for that VM, and `/PATH/TO/id_rsa` is the full path to the private half of your key pair. (The default location is `~/.ssh/id_rsa` if you generated your key with `ssh-keygen` and didn't specify a different location.)
+The CloudLab web interface includes a terminal utility with which you can access a "shell" and run commands on any host in your experiment. To access it, click on the host and choose "Shell" from the menu:
 
-For example, if the GENI Portal shows the following login details for me for the "romeo" host in my experiment:
+![Open a shell on a CloudLab host.](images/cl-shell.png)
 
-![](1-jacks-login-details.png)
+This will open a new "tab" in the CloudLab experiment page, with the same name as the hostname. At this tab, you'll have an interactive terminal session on the host. You can type commands into this terminal session and see the output.
 
-and my key was located in the default location, `~/.ssh/id_rsa`, I would run
+![A shell on a remote host.](images/cl-shell-open.png)
 
-```
-ssh ffund01@pc3.instageni.maxgigapop.net -p 25107 -i ~/.ssh/id_rsa
-```
-
-in a terminal window to log in.
-
-The first time you log in to each new host, your computer will display a warning similar to the following:
+Try typing
 
 ```
-The authenticity of host '[pc3.instageni.maxgigapop.net]:25107 ([206.196.180.202]:25107)' can't be established.
+echo "Hello world"
+```
+
+in this terminal shell, and observe the output.
+
+![Command and output.](images/cl-shell-cmd.png)
+
+It's helpful to know how to copy and paste from/to this terminal. (For some experiments, you may want to copy commands from the instructions and paste them directly into the terminal. You may also want to copy command output from the terminal into your notes or a lab report.)
+
+* Try selecting the `echo` command above and copying it. Then, right click in the shell you have open on the "romeo" host and select "Paste".
+* Try selecting a few lines of text in the shell, then right click and select "Copy". Open a text editor or document editor, and paste the text you have copied.
+
+When you are done using this shell, you can close it using the "x" icon on the tab:
+
+![Closing a terminal.](images/cl-shell-close.png)
+
+#### Using your own terminal application
+
+The terminal in the CloudLab web portal is handy, but you may find it more convenient to use your own terminal. 
+
+Click on the "List view" tab, and note the line corresponding to the host you want to access - in this case, the host named "romeo".  Copy the text in the "SSH" command section:
+
+![Get SSH details.](images/native-shell.png)
+
+Note that this text is a hyperlink, and will prompt you to open an application if you click on it. *Don't* click on it - just select it and copy it.
+
+Open the terminal you installed earlier, and paste this SSH command into the terminal window, but don't run it yet!
+
+![SSH command.](images/terminal-cmd-0.png)
+
+If you have saved your SSH key in the default location, this command will work directly. But if you specified a non-default location for your SSH key, you'll need to modify the command to include the path to your own SSH key. (You should have noted this path in "Exercise - Set up SSH keys.")
+
+In your terminal, add a `-i` and then the path to your SSH key just after the word `ssh` in the command. For example, if my key was located in, `~/.ssh/id_rsa`, I would use
+
+![SSH command with key path.](images/terminal-cmd-1.png)
+
+Then, hit Enter to run the command. 
+
+The first time you log in to each new host, your computer may display a warning similar to the following:
+
+```
+The authenticity of host '[amd101.utah.cloudlab.us]:25107 ([206.196.180.202]:25107)' can't be established.
 RSA key fingerprint is SHA256:FUNco2udT/ur2rNb2NnZnUc8s2v6xvNdOFhFFxcWGYA.
 Are you sure you want to continue connecting (yes/no)?
 ```
 
-and you will have to type the word `yes` and hit Enter to continue. If you have specified your key path and other details correctly, it won't ask you for a password when you log in to the node. (It may ask for the passphrase for your private key if you've set one.)
+and you will have to type the word `yes` and hit Enter to continue. If you have specified your key path and other details correctly, it won't ask you for a password when you log in to the node. (It may ask for the _passphrase_ for your private key if you've set one.)
 
+Try typing
+
+```
+echo "Hello world"
+```
+
+in this terminal shell, and observe the output. Then, you can type 
+
+```
+exit
+```
+
+to close the terminal session.
+
+#### Using VNC
+
+Finally, you can also get a graphical user interface on the remote host using a remote access protocol called VNC.
+
+In the "Topology view" tab, click on the host again, and choose the option to "Open VNC Window".
+
+![Open a VNC session.](images/vnc-0.png)
+
+
+### Release resources
+
+Part of being a good CloudLab citizen is releasing resources when you're not using them anymore. When you have finished everything you need to do in an experiment and retrieved all data from your remote hosts, use the "Terminate" button  to delete your resources and free them for other experimenters.
+
+![Terminate experiment.](images/delete-resources.png)
+
+Once you delete your resources, you will no longer have access to them, and any data on them will be deleted. Make sure that you have saved *everything* before you delete your resources.
 
 
 ## Appendix - view, edit, or add keys on CloudLab
