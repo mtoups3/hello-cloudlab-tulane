@@ -1,10 +1,15 @@
 # Hello, CloudLab
 
-In this tutorial, you will learn how to use CloudLab to run experiments in computer networks or cloud computing.
+In this tutorial, you will learn how to use CloudLab to run experiments in computer networks or cloud computing. It should take you about 60-90 minutes of *active* time to work through this tutorial.
+
+> **Note**
+> This process has a "human in the loop" approval process - you'll need to wait for your instructor or research advisor to approve your request to join their project. Be prepared to start the tutorial, wait for this approval, and then continue. 
+
 
 CloudLab is a "virtual lab" for experiments on networking, cloud computing, and distributed systems. It allows experimenters to set up real (not simulated!) end hosts and links at one or more CloudLab host sites located around the United States. Experimenters can then log in to the hosts asociated with their experiment and install software, run applications to generate traffic, and take network measurements.
 
 Before you can run lab experiments on CloudLab, you will need to set up an account. Once you have completed the steps on this page, you will have an account that you can use for future experiments.
+
 
 ## Prepare your workstation
 
@@ -150,7 +155,7 @@ If you forget these, you won't be able to access resources on CloudLab from your
 
 ### Exercise - Create an account
 
-> Note
+> **Note** 
 > To complete this step, you'll need to know the **Project Name** of the project that you will join. Your instructor or research advisor will tell you the project name to use.
 
 
@@ -158,7 +163,7 @@ First, go to [https://cloudlab.us](https://cloudlab.us) and click on "Request an
 
 ![Creating an account and joining a project on CloudLab.](images/join-project.png)
 
-You will fill in 
+You will fill in:
 
 * your desired username (by convention, this should be lowercase, and have no spaces or special characters), 
 * your full name, school email address, and country, state, and city. 
@@ -178,25 +183,31 @@ In the "Password" field, enter the password you want to use to log in to the Clo
 
 In the Project Information section, select "Join Existing Project". Then, in the "Project Name" field, enter the project name that your instructor or research advisor gave you.
 
+Keep an eye on your email inbox (including the Spam folder!) for:
 
-### Exercise - View or edit keys on CloudLab
+* an email asking you to confirm your account registration. You'll need to click on a link in this email to continue setting up your account.
+* an email letting you know that your instructor or research advisor approved your request to join their project.
 
-Next, upload your public key to the SSH Keys section of your profile on the GENI CloudLab: in the menu, click on your name, then on "[SSH Keys](https://portal.geni.net/secure/profile.php#ssh)", and upload your public key to that page. Your public key is the one with the `.pub` file extension.
-
-
-> **Note**: If you are having trouble uploading your public key to the portal because you aren't able to find it in the file browser, you can copy it to a more convenient location and upload it from there.
->
-> * Open a terminal.
-> * Run `cp /path/to/key.pub /path/to/new/location` but substituting the path to your key and the path to a more convenient location (e.g. your Desktop) for the two arguments.
-> * Upload the public key from the new location.
-> * You can delete the copy of the public key from the new location (the original key is still located at the original location).
+Now you have a CloudLab account - you're ready to log in and use it to get experiment resources!
 
 
-Once your key is in the portal, every time you reserve GENI resources, your key will automatically be placed in the "authorized keys" list so that you can access the resource. 
+## Appendix - view, edit, or add keys on CloudLab
 
-Note that this only applies to resources you reserved after uploading a key. If you lose access to your key and have to generate and upload a new key, you will lose the ability to log on to resources you have reserved in the past.
+The SSH keys you have set up in this tutorial will allow you to access CloudLab resources from only one device - the device that your key is on. If you need to access CloudLab resources from another PC or laptop, you'll need to generate additional keypairs and associate them with your CloudLab account. 
 
-In general, a common mistake students make is to delete or replace their keys if they are having trouble logging in to a resource. This is usually not helpful, and in most cases makes things worse. Deleting a key is like forgetting a password - don't do it!
+To set up a key pair on another device:
+
+* Follow the instructions in the section titled "Exercise - Set up SSH keys" to generate a key pair on this new device.
+* Log in to the CloudLab web portal, and open the [Manage SSH Keys](https://www.cloudlab.us/ssh-keys.php) page from the user menu. Scroll to the "Add Key" section of this page:
+
+![Add a key to your CloudLab account.](images/add-key.png)
+
+Select "Load from file" and in the file browser, select the public part of your key pair (it has a `.pub` extension.) The text of your public key will appear in the "Key" section. Click "Add Key".
+
+Note that if you need to use CloudLab from more than one device, you can have multiple keys associated with your account! You don't have to delete your other keys.
+
+Once your key is in the CloudLab web portal, every time you reserve CloudLab resources, your key will automatically be placed in the "authorized keys" list so that you can access the resource. 
+
 
 ---
 
