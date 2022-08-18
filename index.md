@@ -232,7 +232,7 @@ As your resources come online, you'll see their progress on the CloudLab experim
 
 ![Instantiation progress.](images/instantiate-0.png)
 
-As time passes, you will see a diagram of your experiment, but initially the hosts in the experiment will be colored yellow - this indicates that they're not ready to use yet. There's also a small "⊝" icon in the top right corner of the host - this indicates that it is not yet fully configured.
+As time passes, you will see a diagram of your experiment, but initially the hosts in the experiment will be colored yellow - this indicates that they're not ready to use yet. There's also a small "⊝" icon in the top right corner of the host - this indicates that it is not yet configured.
 
 ![Instantiation progress.](images/instantiate-1.png)
 
