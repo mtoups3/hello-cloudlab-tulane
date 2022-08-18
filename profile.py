@@ -16,12 +16,7 @@ pc = portal.Context()
 # Create a Request object to start building the RSpec.
 request = pc.makeRequestRSpec()
 
-# Retrieve the values the user specifies during instantiation.
-params = pc.bindParameters()
-
 nodeCount = 3
-
-pc.verifyParameters()
 
 # Configure two links
 lan_r = request.Link()

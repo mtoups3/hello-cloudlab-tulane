@@ -203,7 +203,11 @@ Also, when you finish an experiment and have saved all the data somewhere safe, 
 
 ### Exercise - Open a profile
 
+For this experiment, we will use the CloudLab profile available at the following link: https://www.cloudlab.us/p/cl-education/hello-cloudlab
 
+You'll see a brief description of the profile:
+
+![Description of profile.](images/profile-1.png)
 ### Exercise - Instantiate a profile
 
 ### Exercise - Wait for resources to be ready 
