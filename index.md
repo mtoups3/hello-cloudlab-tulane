@@ -13,10 +13,7 @@ Before you can run lab experiments on CloudLab, you will need to set up an accou
 
 ## Prepare your workstation
 
-You'll need to prepare your workstation (the laptop or PC you are going to use for your experiments0 with all necessary software. You will need two pieces of software:
-
-* An appropriate terminal application
-* Wireshark
+You'll need to prepare your workstation (the laptop or PC you are going to use for your experiments) with a suitable terminal application.
 
 
 ### Terminal software
@@ -81,7 +78,9 @@ To paste text into the terminal, place your cursor where you want to paste, and 
 
 ### Wireshark
 
-Wireshark is a software application for capturing, viewing, and analyzing network packets. Download Wireshark from [the Wireshark website](https://www.wireshark.org/download.html).
+Wireshark is a software application for capturing, viewing, and analyzing network packets. This experiment doesn't use Wireshark, but you may need it in future experiments.
+
+Download Wireshark from [the Wireshark website](https://www.wireshark.org/download.html).
 
 Then, follow the instructions to install for your system:
 
@@ -215,7 +214,7 @@ and on the left you'll be asked to select the "Cluster" on which you want your e
 
 Unless otherwise specified, these experiments can run on any cluster. However, since CloudLab is a shared resource, on some occasionas the cluster you select might not have enough available resources to support your experiment. The status indicator next to each cluster tells you roughly how heavily utilized it is at the moment - green indicates that there are not many users, orange means heavy load, and red means that it is almost fully utilized. You are more likely to be successful if you choose a cluster with a green indicator.
 
-After you select a cluster, you can leave the "Name" field blank, or give your experiment a name - it's your choice. Then, click "Next".
+After you select a cluster, you can leave the "Name" field blank, or give your experiment a name - it's your choice. Also make sure your "Project" is selected. Then, click "Next".
 
 ![Set experiment duration.](images/profile-4.png)
 
@@ -233,13 +232,13 @@ As your resources come online, you'll see their progress on the CloudLab experim
 
 ![Instantiation progress.](images/instantiate-0.png)
 
-As time passes, you will see a diagram of your experiment, but initially the hosts in the experiment will be colored yellow - this indicates that they're not ready to use yet. There's also a small "-" icon in the top right corner of the host - this indicates that it is not yet fully configured.
+As time passes, you will see a diagram of your experiment, but initially the hosts in the experiment will be colored yellow - this indicates that they're not ready to use yet. There's also a small "⊝" icon in the top right corner of the host - this indicates that it is not yet fully configured.
 
 ![Instantiation progress.](images/instantiate-1.png)
 
 It can take a while for hosts to boot up and load their configurations - you may want to step away or work on something else for 15-20 minutes and then check back.
 
-At some point, the host will turn green, but it may have a "." icon in the top right - this indicates that it is still being configured.
+At some point, the host will turn green, but it may have a "⊙" icon in the top right - this indicates that it is still being configured.
 
 ![Instantiation progress.](images/instantiate-2.png)
 
@@ -341,6 +340,25 @@ In the "Topology view" tab, click on the host again, and choose the option to "O
 
 ![Open a VNC session.](images/vnc-0.png)
 
+> **Note**
+> The availability of this option depends on the experiment topology and configuration - some CloudLab experiments will have the VNC option, but some will not.
+
+This will open a new window with a graphical user interface running on the remote host:
+
+![A VNC session on the remote host.](images/vnc-1.png)
+
+At first, you'll just see a terminal. But you can install and run graphical applications here, too. For example, type
+
+```
+firefox
+```
+
+at the terminal inside the VNC window, to open a browser *running on the remote host*.
+
+![Running a browser on the remote host.](images/vnc-2.png)
+
+
+When you are done with your VNC session, you can just close the application window.
 
 ### Release resources
 
