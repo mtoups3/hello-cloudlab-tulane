@@ -296,7 +296,7 @@ Click on the "List view" tab, and note the line corresponding to the host you wa
 
 Note that this text is a hyperlink, and will prompt you to open an application if you click on it. *Don't* click on it - just select it and copy it.
 
-Open the terminal you installed earlier, and paste this SSH command into the terminal window, but don't run it yet!
+Open the terminal application you installed earlier (e.g. `cmder`, `iTerm2`), and paste this SSH command into the terminal window, but don't run it yet!
 
 ![SSH command.](images/terminal-cmd-0.png)
 
