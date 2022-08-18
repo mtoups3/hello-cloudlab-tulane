@@ -194,10 +194,9 @@ Now you have a CloudLab account - you're ready to log in and use it to get exper
 
 Whenever you run an experiment on CloudLab, you will
 
-1. Open the *profile* - a description of the experiment resources (hosts and network links) that your experiment will use.
-2. Submit a request to "instantiate" that configuration for use in your experiment.
-3. Wait until the resources in your experiment are ready to log in.
-4. Log in to the resources and run your experiment.
+1. Open the *profile* - a description of the experiment resources (hosts and network links) that your experiment will use. Submit a request to "instantiate" that configuration for use in your experiment.
+2. Wait until the resources in your experiment are ready to log in.
+3. Log in to the resources and run your experiment.
 
 Also, when you finish an experiment and have saved all the data somewhere safe, you will _delete_ the resources in your experiment to free them for use by other experimenters.
 

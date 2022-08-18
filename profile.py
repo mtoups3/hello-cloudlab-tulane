@@ -1,6 +1,9 @@
-"""This topology for the Hello, CloudLab experiment includes two hosts connected by a network link.
+"""This topology has two hosts connected by a network link.
 
-Follow the instructions in at https://teaching-on-testbeds.github.io/hello-cloudlab/ to use this profile.
+It is used in the following experiments:
+
+* [Hello CloudLab](https://teaching-on-testbeds.github.io/hello-cloudlab/)
+
 """
 
 # Import the Portal object.
