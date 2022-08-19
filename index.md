@@ -3,7 +3,7 @@
 In this tutorial, you will learn how to use CloudLab to run experiments in computer networks or cloud computing. It should take you about 60-90 minutes of *active* time to work through this tutorial.
 
 > **Note**
-> This process has a "human in the loop" approval process - you'll need to wait for your instructor or research advisor to approve your request to join their project. Be prepared to start the tutorial, wait for this approval, and then continue. 
+> This process has a "human in the loop" approval stage - you'll need to wait for your instructor or research advisor to approve your request to join their project. Be prepared to start the tutorial, wait for this approval, and then continue. 
 
 
 CloudLab is a "virtual lab" for experiments on networking, cloud computing, and distributed systems. It allows experimenters to set up real (not simulated!) end hosts and links at one or more CloudLab host sites located around the United States. Experimenters can then log in to the hosts asociated with their experiment and install software, run applications to generate traffic, and take network measurements.
@@ -232,7 +232,7 @@ As your resources come online, you'll see their progress on the CloudLab experim
 
 ![Instantiation progress.](images/instantiate-0.png)
 
-As time passes, you will see a diagram of your experiment, but initially the hosts in the experiment will be colored yellow - this indicates that they're not ready to use yet. There's also a small "⊝" icon in the top right corner of the host - this indicates that it is not yet configured.
+As time passes, you will see a diagram of your experiment, but initially the hosts in the experiment will be colored yellow - this indicates that they're not ready to use yet. There's also a small "⊝" icon in the top right corner of the host - this indicates that it is not yet fully configured.
 
 ![Instantiation progress.](images/instantiate-1.png)
 
@@ -296,7 +296,7 @@ Click on the "List view" tab, and note the line corresponding to the host you wa
 
 Note that this text is a hyperlink, and will prompt you to open an application if you click on it. *Don't* click on it - just select it and copy it.
 
-Open the terminal application you installed earlier (e.g. `cmder`, `iTerm2`), and paste this SSH command into the terminal window, but don't run it yet!
+Open the terminal you installed earlier, and paste this SSH command into the terminal window, but don't run it yet!
 
 ![SSH command.](images/terminal-cmd-0.png)
 
@@ -371,7 +371,7 @@ Once you delete your resources, you will no longer have access to them, and any 
 
 ## Appendix - view, edit, or add keys on CloudLab
 
-The SSH keys you have set up in this tutorial will allow you to access CloudLab resources from only one device - the device that your key pair is on. If you need to access CloudLab resources from another PC or laptop, you'll need to generate additional keypairs and associate them with your CloudLab account. 
+The SSH keys you have set up in this tutorial will allow you to access CloudLab resources from only one device - the device that your key is on. If you need to access CloudLab resources from another PC or laptop, you'll need to generate additional keypairs and associate them with your CloudLab account. 
 
 To set up a key pair on another device:
 
@@ -391,7 +391,7 @@ Once your key is in the CloudLab web portal, every time you reserve CloudLab res
 
 <small>Questions about this material? Contact Fraida Fund</small>
 
-<br><br>
+---
 
 <small>This material is based upon work supported by the National Science Foundation under Grant No. 2231984.</small>
 <small>Any opinions, findings, and conclusions or recommendations expressed in this material are those of the author(s) and do not necessarily reflect the views of the National Science Foundation.</small>
