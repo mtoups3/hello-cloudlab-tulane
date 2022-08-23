@@ -18,7 +18,7 @@ pc = portal.Context()
 request = pc.makeRequestRSpec()
 
 # Set up first host - romeo
-node_romeo = request.RawPC("romeo")
+node_romeo = request.XenVM("romeo")
 node_romeo.addService(rspec.Execute(shell="bash", command="/usr/bin/sudo /usr/bin/apt update; /usr/bin/sudo /usr/bin/apt -y install firefox"))
 
 node_romeo.startVNC()
