@@ -201,7 +201,7 @@ Also, when you finish an experiment and have saved all the data somewhere safe, 
 
 ### Exercise - Open and instantiate a profile
 
-For this experiment, we will use the CloudLab profile available at the following link: https://www.cloudlab.us/p/cl-education/hello-cloudlab
+For this experiment, we will use the CloudLab profile available at the following link: [https://www.cloudlab.us/p/cl-education/hello-cloudlab](https://www.cloudlab.us/p/cl-education/hello-cloudlab)
 
 You'll see a brief description of the profile:
 
