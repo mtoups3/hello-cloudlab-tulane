@@ -1,4 +1,4 @@
-"""This topology has one host.
+"""This topology has one host. Also, the `firefox` web browser is installed.
 
 To use this topology, follow the instructions at: [Hello CloudLab](https://teaching-on-testbeds.github.io/hello-cloudlab/)
 
