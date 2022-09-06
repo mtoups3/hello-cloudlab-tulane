@@ -187,7 +187,11 @@ Keep an eye on your email inbox (including the Spam folder!) for:
 * an email asking you to confirm your account registration. You'll need to click on a link in this email to continue setting up your account.
 * an email letting you know that your instructor or research advisor approved your request to join their project.
 
-Now you have a CloudLab account - you're ready to log in and use it to get experiment resources!
+Now you have a CloudLab account - you're ready to log in and use it to get experiment resources! There's one setting you should change first, though. Our lab experiments assume that you will be using a `bash` shell on CloudLab. Click on your username in the top right of the CloudLab web portal, and "Manage Account". Then set the "Default Shell" to `bash` and click "Save" to apply the setting:
+
+![Setting the default shell.](images/bash-shell.png)
+
+
 
 ## Reserve and log in to resources on CloudLab
 

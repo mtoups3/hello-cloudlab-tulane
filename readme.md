@@ -6,7 +6,7 @@ In this tutorial, you will learn how to use CloudLab to run experiments in compu
 > This process has a "human in the loop" approval stage - you'll need to wait for your instructor or research advisor to approve your request to join their project. Be prepared to start the tutorial, wait for this approval, and then continue. 
 
 
-CloudLab is a "virtual lab" for experiments on networking, cloud computing, and distributed systems. It allows experimenters to set up real (not simulated!) end hosts and links at one or more CloudLab host sites located around the United States. Experimenters can then log in to the hosts asociated with their experiment and install software, run applications to generate traffic, and take network measurements.
+CloudLab is a "virtual lab" for experiments on networking, cloud computing, and distributed systems. It allows experimenters to set up real (not simulated!) end hosts and links at one or more CloudLab host sites located around the United States. Experimenters can then log in to the hosts associated with their experiment and install software, run applications to generate traffic, and take network measurements.
 
 Before you can run lab experiments on CloudLab, you will need to set up an account. Once you have completed the steps on this page, you will have an account that you can use for future experiments.
 
@@ -187,7 +187,11 @@ Keep an eye on your email inbox (including the Spam folder!) for:
 * an email asking you to confirm your account registration. You'll need to click on a link in this email to continue setting up your account.
 * an email letting you know that your instructor or research advisor approved your request to join their project.
 
-Now you have a CloudLab account - you're ready to log in and use it to get experiment resources!
+Now you have a CloudLab account - you're ready to log in and use it to get experiment resources! There's one setting you should change first, though. Our lab experiments assume that you will be using a `bash` shell on CloudLab. Click on your username in the top right of the CloudLab web portal, and "Manage Account". Then set the "Default Shell" to `bash` and click "Save" to apply the setting:
+
+![Setting the default shell.](images/bash-shell.png)
+
+
 
 ## Reserve and log in to resources on CloudLab
 
