@@ -22,7 +22,7 @@ To use CloudLab, the primary software application you'll need is a terminal, whi
 
 You may have a terminal application already on your workstation, but it may not be ideal for this purpose. When you run experiments on remote hosts, you will often have to run and monitor the output of multiple commands in several independent terminal sessions. It is therefore recommended to use a terminal that lets you split one terminal window into multiple panes - for example,
 
-* [cmder](https://cmder.net/) for Windows. (Get the full version, not the mini version.)
+* [cmder](https://cmder.app/) for Windows. (Get the full version, not the mini version.)
 * [iTerm2](https://www.iterm2.com/) for Mac
 * [terminator](https://launchpad.net/terminator) for Linux
 
