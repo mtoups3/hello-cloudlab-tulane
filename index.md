@@ -216,7 +216,7 @@ and on the left you'll be asked to select the "Cluster" on which you want your e
 
 ![Cluster selection.](images/profile-3.png)
 
-Unless otherwise specified, these experiments can run on any cluster. However, since CloudLab is a shared resource, on some occasionas the cluster you select might not have enough available resources to support your experiment. The status indicator next to each cluster tells you roughly how heavily utilized it is at the moment - green indicates that there are not many users, orange means heavy load, and red means that it is almost fully utilized. You are more likely to be successful if you choose a cluster with a green indicator.
+Unless otherwise specified, these experiments can run on any cluster. However, since CloudLab is a shared resource, on some occasions the cluster you select might not have enough available resources to support your experiment. The status indicator next to each cluster tells you roughly how heavily utilized it is at the moment - green indicates that there are not many users, orange means heavy load, and red means that it is almost fully utilized. You are more likely to be successful if you choose a cluster with a green indicator.
 
 After you select a cluster, you can leave the "Name" field blank, or give your experiment a name - it's your choice. Also make sure your "Project" is selected. Then, click "Next".
 
@@ -370,7 +370,7 @@ Part of being a good CloudLab citizen is releasing resources when you're not usi
 
 ![Terminate experiment.](images/delete-resources.png)
 
-Once you delete your resources, you will no longer have access to them, and any data on them will be deleted. Make sure that you have saved *everything* before you delete your resources.
+Once you delete your resources, you will no longer have access to them, and any data on them will be deleted. You will have to make sure that you have saved *everything* before you delete your resources.
 
 
 ## Appendix - view, edit, or add keys on CloudLab
