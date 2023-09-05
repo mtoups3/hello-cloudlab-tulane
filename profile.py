@@ -22,7 +22,7 @@ node_romeo = request.XenVM('romeo')
 node_romeo.disk_image = 'urn:publicid:IDN+emulab.net+image+emulab-ops:UBUNTU22-64-STD'
 node_romeo.addService(rspec.Execute(shell="bash", command="/usr/bin/sudo /usr/bin/apt update; /usr/bin/sudo /usr/bin/apt -y install firefox"))
 node_romeo.exclusive = False
-
+node_romeo.routable_control_ip = True # required for VNC
 node_romeo.startVNC()
 
 # Print the RSpec to the enclosing page.
