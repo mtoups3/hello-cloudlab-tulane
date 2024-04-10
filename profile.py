@@ -1,6 +1,6 @@
-"""This topology has one host. Also, the `firefox` web browser is installed.
+"""This topology has one host, to allow students to test using CloudLab experiments.
 
-Spring 2024: modified by M. Toups
+Spring 2024: updated by M. Toups
 """
 
 # Import the Portal object.
